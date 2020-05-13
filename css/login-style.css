@@ -3,29 +3,103 @@
     --input-padding-y: .75rem;
 }
 
-body {
-    background: #007bff;
-    background: linear-gradient(to right, #0a205e, #8498b0);
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
-.card-signin {
-    border: 0;
-    border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+iframe {
+    border: none !important;
 }
 
-.card-signin .card-title {
-    margin-bottom: 2rem;
-    font-weight: 300;
+body,
+html {
+    background: white;
+    height: 100%;
+    /*background: linear-gradient(to right, #0a205e, #8498b0);*/
+}
+
+span {
+    font-size: 14px;
+}
+
+.surround {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container-login-Sc {
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+}
+
+.wrap-login-Sc {
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    flex-direction: row-reverse;
+}
+
+.login-imagen {
+    width: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+.login-imagen::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(34, 151, 156, 0.37);
+}
+
+.login-title {
+    width: 100%;
+    display: block;
     font-size: 1.5rem;
-}
-
-.card-signin .card-body {
-    padding: 2rem;
+    text-align: center;
 }
 
 .form-signin {
-    width: 100%;
+    width: 50%;
+    min-height: 100vh;
+    display: block;
+    background-color: #f7f7f7;
+    padding: 173px 55px 55px 55px;
+    /*padding: /*303px 65px 40px 65px;*/
+}
+
+.only-padding {
+    padding: 0 20%;
+}
+
+.padding-inside-lett {
+    padding: 40% 10% 40% 20%;
 }
 
 .form-signin .btn {
@@ -99,20 +173,8 @@ body {
     color: #777;
 }
 
-.btn-google {
-    color: white;
-    background-color: #ea4335;
-}
 
-.btn-facebook {
-    color: white;
-    background-color: #3b5998;
-}
-
-
-/* Fallback for Edge
--------------------------------------------------- */
-
+/*
 @supports (-ms-ime-align: auto) {
     .form-label-group>label {
         display: none;
@@ -120,12 +182,14 @@ body {
     .form-label-group input::-ms-input-placeholder {
         color: #777;
     }
-}
+}*/
 
 
 /* Fallback for IE
 -------------------------------------------------- */
 
+
+/*
 @media all and (-ms-high-contrast: none),
 (-ms-high-contrast: active) {
     .form-label-group>label {
@@ -133,5 +197,50 @@ body {
     }
     .form-label-group input:-ms-input-placeholder {
         color: #777;
+    }
+}*/
+
+
+/* Responsive */
+
+@media (min-width: 1400px) {
+    .form-signin {
+        width: 50%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .login-imagen {
+        width: 50%;
+    }
+    .only-padding {
+        padding: 0 25%;
+    }
+}
+
+@media (max-width: 992px) {
+    .form-signin {
+        width: 50%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .login-imagen {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-signin {
+        width: 100%;
+    }
+    .login-imagen {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-signin {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 70px;
     }
 }
